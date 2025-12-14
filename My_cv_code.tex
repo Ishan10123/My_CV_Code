@@ -3,10 +3,10 @@
 % Packages:
 \usepackage[
     ignoreheadfoot, % set margins without considering header and footer
-    top=2 cm, % seperation between body and page edge from the top
-    bottom=2 cm, % seperation between body and page edge from the bottom
-    left=2 cm, % seperation between body and page edge from the left
-    right=2 cm, % seperation between body and page edge from the right
+    top=1.1 cm, % seperation between body and page edge from the top
+    bottom=1.6 cm, % seperation between body and page edge from the bottom
+    left=1.8 cm, % seperation between body and page edge from the left
+    right=1.8 cm, % seperation between body and page edge from the right
     footskip=1.0 cm, % seperation between body and footer
     % showframe % for debugging 
 ]{geometry} % for adjusting page geometry
@@ -23,12 +23,14 @@
     pdfauthor={John Doe},
     pdfcreator={LaTeX with RenderCV},
     colorlinks=true,
-    urlcolor=primaryColor
-]{hyperref} % for links, metadata and bookmarks
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue
+]{hyperref}
+ % for links, metadata and bookmarks
 \usepackage[pscoord]{eso-pic} % for floating text on the page
 \usepackage{calc} % for calculating lengths
 \usepackage{bookmark} % for bookmarks
-\usepackage{lastpage} % for getting the total number of pages
 \usepackage{changepage} % for one column entries (adjustwidth environment)
 \usepackage{paracol} % for two and three column entries
 \usepackage{ifthen} % for conditional statements
@@ -56,7 +58,7 @@
 \setlength{\columnsep}{0.15cm} % set column seperation
 \pagenumbering{gobble} % no page numbering
 
-\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\Large}{}{0pt}{}[\vspace{1pt}\titlerule]
 
 \titlespacing{\section}{
     % left space:
@@ -81,7 +83,6 @@
 }{
     \end{itemize}
 } % new environment for highlights
-
 
 \newenvironment{highlightsforbulletentries}{
     \begin{itemize}[
@@ -150,7 +151,6 @@
 
 % new command for external links:
 
-
 \begin{document}
     \newcommand{\AND}{\unskip
         \cleaders\copy\ANDbox\hskip\wd\ANDbox
@@ -160,14 +160,10 @@
     \sbox\ANDbox{$|$}
 
     \begin{header}
-        \fontsize{25 pt}{25 pt}\selectfont Ishan Kaushik
+        \fontsize{26 pt}{28 pt}\selectfont Ishan Kaushik
 
-        \vspace{5 pt}
-
-        \normalsize
-        \mbox{Kota, Rajasthan, India}%
-        \kern 5.0 pt%
-        \AND%
+        \normalsize  
+        
         \kern 5.0 pt%
         \mbox{\hrefWithoutArrow{mailto:ishurbt1@gmail.com}{ishurbt1@gmail.com}}%
         \kern 5.0 pt%
@@ -177,43 +173,205 @@
         \kern 5.0 pt%
         \AND%
         \kern 5.0 pt%
-        \mbox{\href{https://www.linkedin.com/in/ishan-kaushik-007bb5227}{Linkedin}}%
+        \mbox{\href{https://www.linkedin.com/in/ishankaushik/}{Linkedin}}%
         \kern 5.0 pt%
         \AND%
         \kern 5.0 pt%
-        \mbox{{\href{https://github.com/Ishan10123}{Github}}}%
+        \mbox{{\href{https://github.com/Ishan10123}{GitHub}}}%
     \end{header}
 
-    \vspace{8 pt - 0.3 cm}
-
+    \vspace{5 pt - 0.3 cm}
 
     \section{Summary}
+    \vspace{-0.7em} % adjust this value (negative reduces gap)
 
-
-
-        
         \begin{onecolentry}
-           Final-year Electrical Engineering student with a strong background in data analytics and business intelligence, certified in Data Analytics. Skilled in SQL, Python, Power BI, and Excel with hands-on experience in EDA, predictive modeling, and data visualization across projects in e-commerce, retail, and marketing. Proficient with MySQL, PostgreSQL, and Snowflake, along with tools like Jupyter Notebook, Jira, APIs, and AI Tools. Demonstrated leadership as Secretary of Robotics Club RTU and Technical Advisor at SAC RTU. Passionate about turning data into insights that drive smart decisions.
+                \item AI Automation Engineer  with hands-on experience in designing end-to-end workflow AI Automations, RPA solutions, and data pipelines using Python, FastAPI, Power Automate, n8n, Playwright, and MySQL. Specialized in LLM, RAG Agentic AI, OpenAI, Hugging Face, and LangChain to build intelligent automation and AI solutions. Experienced in developing REST APIs, Fast APIs CI/CD-workflows, Power BI reports and dashboard. Salesforce Certified Platform Administrator with practical experience and projects delivering, AI, data engineering, and cloud-based solutions.
+        \end{onecolentry}       
+ 
+    \section{Experience}
+        
+        \begin{twocolentry}{June 2025 – Present}
+    \textbf{\large vTech Solution Inc} \\
+App Service Analyst
+
+\end{twocolentry}
+       \vspace{2 pt}
+
+\begin{twocolentry}{
+            \href{https://github.com/Ishan10123/AI_Resume_Formatting}{GitHub}
+        }
+            \textbf{Projects: AI Resume Formatting}\end{twocolentry}
+
+\begin{highlights}
+\item Developed a Python-based web application using FastAPI, Uvicorn, and Ollama Cloud API for automating the extraction, normalization, and formatting of resumes into structured JSON formats.
+\item Integrated docx and PyMuPDF for handling DOC, DOCX, and PDF file types, and utilized Python scripting to automate document conversion and data extraction processes.
+\item Automated the population of template placeholders, converting raw resume data into fully formatted, client-ready resumes, with the integration of AI-driven data extraction and document conversion, reducing recruiter manual effort by 90–95\% and allowing the U.S. client to receive personalized resumes with minimal manual effort.
+\end{highlights}
+
+\vspace{1 pt}
+       
+\begin{onecolentry}
+\textbf{Project: Resume Harvesting using Power Automate}
+\end{onecolentry}
+
+\begin{highlights}
+\item Designed and deployed an AI-powered resume harvesting solution using Power Automate Cloud, Ceipal REST APIs, Azure OpenAI, and Google CSE, building an hourly scheduled workflow that authenticates, retrieves job data, structures metadata, and generates intelligent x-ray search strings.
+\item Created a structured processing pipeline utilizing Apply-to-Each loops, JSON transformation, URL normalization, and LinkedIn-specific filtering to extract high-quality candidate profiles from Google CSE.
+\item Built a secure backend integration using ODBC through the On-Premises Data Gateway, enabling seamless insertion of harvested profiles into a remote MySQL database with automated SNO sequencing and status tracking.
+\item Developed a dedicated RPA workflow using Power Automate Desktop to handle browser-based interactions, fallback scraping operations, and automated validations.
+\item Designed a Power BI dashboard to track end-to-end harvesting performance, visualizing 15–25 jobs per day from Ceipal, 25–40 candidates per job within an 80–300 mile search radius, resume processing time of 30 seconds per candidate, and real-time visibility into job-wise candidate matching, profile ingestion, and successful resume uploads into the Ceipal ATS.
+\end{highlights}
+
+\vspace{1 pt}
+
+\begin{twocolentry}{
+            \href{https://github.com/Ishan10123/Candidate-sourcing-using-n8n-}{GitHub}
+        }
+            \textbf{Projects: Candidate Sourcing Using n8n}\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Designed and deployed automated candidate-job data workflows in n8n, integrating Ceipal Webhook APIs, custom code nodes, Gemini nodes for Boolean and X-Ray search string generation, Google CSE, and Bitbucket, streamlining recruitment operations and improving data accuracy.
+            \end{highlights}
+            \begin{highlights}
+                \item Enhanced automation ecosystem through REST API integrations, Postman testing, and LLM applications, including training company-specific LLMs on proprietary datasets by supporting collaboration through Bitbucket-based version control and deployment governance.
+            \end{highlights}
+
+\vspace{1 pt}
+
+\begin{twocolentry}{
+            \href{https://github.com/Ishan10123/Opportunity_Scraper}{GitHub}
+        }
+            \textbf{Projects: Opportunity Scraper}\end{twocolentry}
+                        
+            \begin{highlights}
+                \item Built an AI-powered web scraping tool using Playwright, undetected Chrome browsers, Selenium, and BeautifulSoup with conditional filtering to extract structured opportunity data from portals (SAM.gov, GovWin), auto-export reports (CSV/JSON), and schedule email summaries for stakeholders.
+            \end{highlights}
+
+\vspace{1 pt}
+
+\textbf{Projects: Get Rate Feature}
+            
+            \begin{highlights}
+                \item Developed and integrated APIs for “Get Rate” click tracking and reporting, enabling real-time insights, monthly analytics, and enhanced visibility into platform engagement metrics.
+            \end{highlights}
+            
         \end{onecolentry}
 
-        \vspace{5 pt}
+\vspace{2pt}
 
-    
+               \begin{twocolentry}{June 2024 – Oct 2024}
+    \textbf{\large 1Stop.ai (E-Cell IIT Roorkee)} \\
+Data Science Intern
 
+\end{twocolentry}
+
+\begin{twocolentry}{
+            \href{https://github.com/Ishan10123/Spam-SMS-Project}{GitHub}
+        }
+            \textbf{Projects: Spam SMS Detection}\end{twocolentry}
+        
+\begin{highlights}
+                \item Developed and deployed end-to-end SPAM SMS classifier using NLP and machine learning, improving filtering precision from 95\% to 97\%. Also led EDA and BI projects on credit datasets and sales forecasting.
+                \item Achieved Precision of 1.0 and increase the model accuracy from 95\% to 97\% by 3,000 words.
+            \end{highlights}
+
+\vspace{1 pt}
+
+        \begin{twocolentry}{
+            \href{https://github.com/Ishan10123/Credit-EDA-Project-1Stop.ai-}{GitHub}
+        }
+            \textbf{Project: Credit EDA}\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Utilized libraries like Matplotlib and Seaborn to identify trends and correlations in credit data, such as
+heatmaps and scatter plots illustrating relationships between credit score and default risk.
+                \item Used Cosine Similarity, Text Vectorization, Python, Pandas, Scikit-learn, and Streamlit.
+            \end{highlights}
+        \end{onecolentry}       
+
+\vspace{4 pt}
+       
+\begin{twocolentry}{
+            \href{https://github.com/Ishan10123/Super_Store_Sale s_Forecast_Dashboard}{GitHub}
+        }
+            \textbf{Super Store Sales Forecast Dashboard:}\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built a Power BI dashboard to visualize sales KPIs and forecast trends, enabling retail teams to optimize inventory and increase ROI by predicting demand.
+            \end{highlights}
+        \end{onecolentry}
+
+                 \vspace{4pt}
+
+        \begin{twocolentry}{
+            \href{https://github.com/Ishan10123/AI-Skin-Analyzer}{GitHub}
+        }
+            \textbf{AI Skin Analyzer:}\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Developed an AI-powered skin analysis application using a custom CNN with OpenCV and FastAPI, integrating photo capture, image upload, and structured CSV/JSON outputs to deliver real-time skin condition assessments.
+            \end{highlights}
+        \end{onecolentry}
+
+       \vspace{5 pt}
+
+\section{Skills}
+
+\begin{onecolentry}
+\textbf{Programming:}  
+Python, SQL, Data Structures \& Algorithms, Problem Solving, Object Oriented Programming 
+\end{onecolentry}
+
+\vspace{2pt}
+
+\begin{onecolentry}
+\textbf{Machine Learning \& AI:}  
+Machine Learning Algorithms, Supervised \& Unsupervised Learning, Feature Engineering, Classification Models, Model Evaluation, NLP, Hugging Face, Text Vectorization, Retrieval-Augmented Generation (RAG), Prompt Engineering, Agentic AI, LLM Orchestration, AI Automation Pipelines
+\end{onecolentry}
+
+\vspace{2pt}
+
+\begin{onecolentry}
+\textbf{Frameworks \& Automation:}  
+NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow, PyTorch, OpenCV, FastAPI, LangChain, Power Automate, RPA Workflow Design, n8n, Playwright, Selenium, BeautifulSoup, Browser Automation
+\end{onecolentry}
+
+\vspace{2pt}
+
+\begin{onecolentry}
+\textbf{Databases \& Analytics:}  
+MySQL, PostgreSQL, SQL Server, ODBC Integrations, Data Modeling, ETL Pipelines, Data Processing, Power BI, Advanced Excel, Predictive Analysis,  Analytics Reporting
+\end{onecolentry}
+
+\vspace{2pt}
+
+\begin{onecolentry}
+\textbf{Cloud Tools:}  
+CI/CD Pipelines, Copado (Salesforce DevOps), Git Bash, GitHub, Bitbucket, AWS Cloud, Salesforce (Administration, Flow Builder, CRM, Process Builder, App Builder, Data Loader, Workflow Rules), REST APIs, Webhooks, API Gateways, Postman, JIRA, On-Premises Data Gateway
+\end{onecolentry}
+       
+\vspace{4 pt}
+        
     \section{Education}
-
-
-
         
         \begin{twocolentry}{
-            Nov 2021 – June 2025
+            Nov 2021 – May 2025
         }
             \textbf{Rajasthan Technical University}, Bachelor's of Technology in Electrical Engineering\end{twocolentry}
 
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item CGPA: 8.2/10
+                \item CGPA: 8.52/10
             \end{highlights}
         \end{onecolentry}
 
@@ -227,270 +385,52 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Percentage: 80\%
+                \item Percentage: 80\% in PCM
             \end{highlights}
         \end{onecolentry}
 
-\vspace{5 pt}
+\vspace{4 pt}
 
-    
-    \section{Experience}
+\section{Achievements}
 
-
-
-        
-        \begin{twocolentry}{
-            June 2024 – Oct 2024
-        }
-            \textbf{DATA SCIENCE INTERN}, 1Stop.ai (E-Cell IIT Roorkee)\end{twocolentry}
-
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Developed SPAM SMS detection project , credit EDA project, super store sales forecast dashboard,
-SQL music store analysis project.
-            \end{highlights}
-        \end{onecolentry}
-        
-\vspace{2 pt}
-
-  \begin{twocolentry}{
-            July 2024 – Aug 2024
-        }
-            \textbf{DATA SCIENCE INTERN}, Cognifyz Technologies\end{twocolentry}
-
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Completed a 2-month remote Data Science internship at Cognifyz Technologies, focusing on data analysis, EDA, and machine learning using Python, SQL, Excel, and MATLAB. Collaborated on real-world AI projects, enhancing skills in statistical modeling and data-driven insights.
-            \end{highlights}
-        \end{onecolentry}
-
-        \vspace{5 pt}
-
-    
-    \section{Projects}
-
-
-
-        
-        \begin{twocolentry}{
-            \href{https://github.com/Ishan10123/Spam-SMS-Project}{Github}
-        }
-            \textbf{Spam SMS Detection:}\end{twocolentry}
-
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Developed SPAM SMS Classification System using machine learning algorithms (NB, KNN, SVM) to
-automatically identify \& filter out spam messages. Analyzed a data set of over 5,000 SMS messages.
-                \item Achieved Precision of 1.0 and increase the model accuracy from 95\% to 97\% by 3,000 words.
-            \end{highlights}
-        \end{onecolentry}
-
-
-        \vspace{2 pt}
-
-        \begin{twocolentry}{
-            \href{https://github.com/Ishan10123/Credit-EDA-Project-1Stop.ai-}{Github}
-        }
-            \textbf{Credit EDA:}\end{twocolentry}
-
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Utilized libraries like Matplotlib and Seaborn to identify trends and correlations in credit data, such as
-heatmaps and scatter plots illustrating relationships between credit score and default risk.
-                \item Used Cosine Similarity, Text Vectorization, Python, Pandas, Scikit-learn, and Streamlit.
-            \end{highlights}
-        \end{onecolentry}
-
-
-            \vspace{2 pt}
-
-        \begin{twocolentry}{
-            \href{https://github.com/Ishan10123/SQL_Music_Store _Analysis_Project}{Github}
-        }
-            \textbf{SQL Music Store Analysis Project:}\end{twocolentry}
-
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Performed data extraction, transformation, and analysis using SQL on a music store database to uncover customer behavior, sales trends, and artist popularity.
-            \end{highlights}
-        \end{onecolentry}
-
-               \vspace{2 pt}
-
-        \begin{twocolentry}{
-            \href{https://github.com/Ishan10123/Super_Store_Sale s_Forecast_Dashboard}{Github}
-        }
-            \textbf{Super Store Sales Forecast Dashboard:}\end{twocolentry}
-
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Built an interactive Power BI dashboard to visualize sales performance and applied time-series forecasting to predict future sales trends for strategic decision-making.
-            \end{highlights}
-        \end{onecolentry}
-
-                 \vspace{2 pt}
-
-        \begin{twocolentry}{
-            \href{https://github.com/Ishan10123/Credit_Card- _Financial_Dashboard}{Github}
-        }
-            \textbf{Credit Card Financial Dashboard:}\end{twocolentry}
-
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Developed a dynamic Power BI dashboard to monitor customer spending behavior, credit utilization, and financial KPIs for actionable insights in the credit card domain
-            \end{highlights}
-        \end{onecolentry}
-
-                 \vspace{2 pt}
-
-        \begin{twocolentry}{
-            \href{https://github.com/Ishan10123/Amarson_Store_ Data_Analysis_Dashboard}{Github}
-        }
-            \textbf{Amarson Store Data Analysis Dashboard:}\end{twocolentry}
-
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Created a data-driven dashboard to analyze product performance, customer segments, and inventory metrics, enhancing business intelligence for a retail store.
-            \end{highlights}
-        \end{onecolentry}
-
-  \vspace{5 pt}
-
-    
-    \section{Technologies}
-
-
-
-        
-        \begin{onecolentry}
-            \textbf{Programming Languages:} Python, SQL
-        \end{onecolentry}
-
-        \vspace{2 pt}
-
-        \begin{onecolentry}
-            \textbf{Libraries/Frameworks:}NumPy, Pandas, Seaborn,
-Matplotlib
-        \end{onecolentry}
-
-           \vspace{2 pt}
-
-        \begin{onecolentry}
-            \textbf{Tools:}Jupyter Notebook, VS Code, PostgreSQL,
-Power BI, Git, Excel, Snowflakes, Web API, JIRA\end{onecolentry}
-
-           \vspace{2 pt}
-
-        \begin{onecolentry}
-            \textbf{Coursework:}DSA, OOPs, OS, DBMS, ML, EDA, Data Analytics Concepts, Web Scrapping, ETL
-        \end{onecolentry}
-
-     \vspace{2 pt}
-
-        \begin{onecolentry}
-            \textbf{Soft Skills:}Leadership, Critical Thinking, Analytics
-, Teamwork, Problem solving, Communication, Stack Holder Management, Presentation Skills
-        \end{onecolentry}
-
-\vspace{5 pt}
-
+\begin{onecolentry}
+\begin{highlights}
+\item \textbf{\href{https://leetcode.com/u/Ishan_2003/}{LeetCode}} — Solved 80+ problems
+\item \textbf{\href{https://www.hackerrank.com/profile/ishurbt1}{HackerRank}} — 5 star in SQL
+\item \textbf{\href{https://www.salesforce.com/trailblazer/ce74om7zzr378ly8pq}{Trailhead}} — Mountaineer rank: 25+ badges and 18{,}000+ points
+\item \textbf{Secretary} — Robotics Club, RTU, Kota
+\item \textbf{Technical Head \& Technical Advisor} — Student Activity Center (SAC), RTU, Kota
+\end{highlights}
+\end{onecolentry}
+ 
  \section{Certifications}
 
+\begin{onecolentry}
+\textbf{\href{https://www.salesforce.com/trailblazer/profile}{Salesforce}:} Salesforce Certified Platform Administrator
+\end{onecolentry}
 
+\vspace{2pt}
 
-        
-        \begin{onecolentry}
-            \textbf{Cisco Network Academy: }Introduction to Data Science
-        \end{onecolentry}
+\begin{onecolentry}
+\textbf{\href{https://www.salesforce.com/trailblazer/profile}{Salesforce}:} Salesforce Certified Associate
+\end{onecolentry}
 
-           \vspace{2 pt}
+\vspace{2pt}
 
-         \begin{onecolentry}
-            \textbf{Cisco Network Academy: }Data Analytics Essentials
-        \end{onecolentry}
+\begin{onecolentry}
+\textbf{\href{https://success.copado.com/s/validate-credentials}{Copado}:} Copado Certified Fundamentals 1 SFP
+\end{onecolentry}
 
-\vspace{2 pt}
+\vspace{2pt}
 
-          \begin{onecolentry}
-            \textbf{Microsoft and Linkedin: }Career Essentials in Data Analytics
-        \end{onecolentry}
+\begin{onecolentry}
+\textbf{\href{https://success.copado.com/s/validate-credentials}{Copado}:} Copado Certified Fundamentals 2 SFP
+\end{onecolentry}
 
-\vspace{2 pt}
+\vspace{2pt}
 
-          \begin{onecolentry}
-            \textbf{Accenture North America: }Data Analytics and Visualization Job Simulation
-        \end{onecolentry}
-
-        \vspace{2 pt}
-
-          \begin{onecolentry}
-            \textbf{HackerRank: }Advanced SQL
-        \end{onecolentry}
-
-        \vspace{2 pt}
-
-          \begin{onecolentry}
-            \textbf{Goldman Sachs: }Excel Skills for Business
-        \end{onecolentry}
-
-        \vspace{2 pt}
-
-          \begin{onecolentry}
-            \textbf{PWC Switzerland: }Power BI Job Simulation
-        \end{onecolentry}
-
-           \vspace{2 pt}
-
-          \begin{onecolentry}
-            \textbf{Quantium: }Data Analytics Job Simulation
-        \end{onecolentry}
-
-                \vspace{2 pt}
-
-          \begin{onecolentry}
-            \textbf{Datacom: }Introduction to Cloud
-        \end{onecolentry}
-
-        \vspace{5 pt}
-
-        
-\section{Achivements}
-
- \begin{onecolentry}
-            \textbf{RTU-SAC: }Technical Head of Student Activity Centre
-        \end{onecolentry}
-
-        \vspace{2 pt}
-
-         \begin{onecolentry}
-            \textbf{Robotics Club-RTU: }Club Secretary
-        \end{onecolentry}
-
-        \vspace{2 pt}
-
-         \begin{onecolentry}
-            \textbf{SIH: }Smart India Hackathon 2024 Finalist
-        \end{onecolentry}
-
-          \vspace{2 pt}
-
-         \begin{onecolentry}
-            \textbf{RTU-Fest: }Event organizer in THAR 2024 (Tech Fest RTU)
-        \end{onecolentry}
-
-          \vspace{2 pt}
-
-         \begin{onecolentry}
-            \textbf{Workshop: }Embedded Systems Workshop  and Proteus Workshops for PCB Designing 
-        \end{onecolentry}
-    
+\begin{onecolentry}
+\textbf{\href{https://www.hackerrank.com/profile/ishurbt1}{HackerRank}:} Advanced SQL
+\end{onecolentry}
 
 \end{document}
